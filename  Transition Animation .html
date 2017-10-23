@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>untitled</title>
+                <style>
+                    #salma {
+                        width: 100px;
+                        height:100px;
+                        border-radius: 10px;
+                        background: red;
+                        transition: transform ease 2s, opacity ease-in 3s;
+                    }
+                </style>
+	</head>
+	<body>
+            <div id="salma"></div>
+            <button onclick="el.style.transform='translateX(100px)' ">Transform</button>
+
+            <script>
+                
+                var el = document.getElementById("salma");
+                el.addEventListener("transitionend", function(event) {
+                    alert(event.propertyName + ' Transform Fininshed In ' + event.elapsedTime);
+                });
+           
+            </script>
+
+	</body>
+</html>

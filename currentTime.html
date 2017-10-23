@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>untitled</title>
+	</head>
+	<body>
+            <div id="time"></div>
+            <script>
+                // Get Current Day (Which give an index) and assign it tothe DayList To get The Name of the Current Day
+                var today = new Date();
+                var day = today.getDay();
+                var dayList = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+                console.log();
+                
+                // Get Current Hour/Min/sec 
+                var hour = today.getHours();
+                var min = today.getMinutes();
+                var sec = today.getSeconds();
+                
+                var am_pm = ( hour >= 12 ) ? "PM " : "AM ";
+                hour = (hour >= 12)? hour -12 : hour;
+                
+                
+                function runTime () {
+                    if (hour === 0 && am_pm === "PM ") {
+                    if (min === 0 && sec === 0) {
+                        hour = 12;
+                        am_pm = " Noon";
+                    } else {
+                        hour = 12;
+                        am_pm = " PM";
+                    }
+                }
+                
+                if (hour === 0 && am_pm === "AM ") {
+                    if (min === 0 && sec === 0) {
+                        hour = 12;
+                        am_pm = " Midnight";
+                    } else {
+                        hour = 12;
+                        am_pm = " AM";
+                    }
+                }
+                console.log(hour + " " + min + " " + sec + am_pm);
+                }
+                var div  = document.getElementById('time');
+                setInterval(runTime, 1000);
+                div.innerHTML = dayList[day] ;
+               
+            </script>
+
+	</body>
+</html>
