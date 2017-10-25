@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>JavaScript basic animation</title>
+	</head>
+	<body onload="animate_string('target')">
+            
+             <pre id="target">w3resource </pre>
+             
+             
+             <script>
+                 
+                 function animate_string(id) {
+                     var element = document.getElementById(id);
+                     var textNode = element.childNodes[0];
+                     var text = textNode.data;
+                     var textLength = text.length -1;
+                     
+                     setInterval(function() {
+                         text = text[textLength] + text.substring(0, textLength);
+                         textNode.data = text;
+                     },1000);
+                 } 
+                 
+             </script>
+	</body>
+</html>
