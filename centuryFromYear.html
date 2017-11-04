@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>untitled</title>
+	</head>
+	<body>
+            <script>
+                /*
+                 Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
+                 */
+                function centuryFromYear(year) {
+                    let century; 
+                    if (year === (century * 100) ){
+                        century = Math.floor(year/100);
+                    } else {
+                        century = Math.ceil(year/100);
+                    }
+                    return century;
+                }
+                centuryFromYear(1700);
+                centuryFromYear(2012);
+            </script>
+	</body>
+</html>
