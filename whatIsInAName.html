@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>what is in a name?</title>
+  </head>
+  <body>
+    <script>
+    function whatIsInAName(collection, source) {
+      var keys = Object.keys(source);
+
+      let newCollection = collection.filter(function (obj) {
+        for(var i = 0; i < keys.length; i++) {
+          if(!obj.hasOwnProperty(keys[i]) || obj[keys[i]] !== source[keys[i]]) {
+            return false;
+          }
+        }
+        return true;
+      });
+    console.log(newCollection);
+    }
+
+    whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+    </script>
+  </body>
+</html>
