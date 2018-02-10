@@ -6,5 +6,22 @@
   </head>
   <body>
     <div id="Piglatin"></div>
+
+    <script>
+    function translatePigLatin(str) {
+    let pigLatin = '';
+    const regex = /[aeiou]/gi;
+    if (str[0].match(regex)) {
+      pigLaatin = str + 'way';
+    } else {
+      const vowelIndex = str.indexOf(str.match(regex)[0]);
+      pigLatin = str.substr(vowelIndex) + str.substr(0, vowelIndex) + 'ay';
+    }
+    document.getElementById('Piglatin').textContent = pigLatin;
+    }
+
+    // test here
+    translatePigLatin("consonant");
+    </script>
   </body>
 </html>
