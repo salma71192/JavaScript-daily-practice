@@ -7,6 +7,36 @@
 	<body>
 		<script>
 			
+			function pairElement(str) {
+			  var pairedDNA = [];
+			  function findPaires(char) {
+			    switch(char) {
+			      case "A":
+			        pairedDNA.push(["A", "T"]);
+			        break;
+			       
+			      case "T":
+			        pairedDNA.push(["T", "A"]);
+			        break;
+			        
+			      case "C":
+			        pairedDNA.push(["C", "G"]);
+			        break;
+			        
+			      case "G":
+			        pairedDNA.push(["G", "C"]);
+			        break;
+			    }
+			  }
+			  for(var i = 0; i < str.length; i++) {
+			    findPaires(str[i]);
+			  }
+			  
+			  console.log(pairedDNA);
+			}
+
+			pairElement("GCG");
+
 		</script>
 	</body>
 </html>
